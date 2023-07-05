@@ -1,0 +1,3 @@
+- NetScape Communications in 1995 >> JavaScript
+- Ecma International in 1997 >> ECMA-262 
+- Differences in JavaScript ES6: let, const, arrow functions, classes, parameters with default values, promises + asynchronous actions, etc.

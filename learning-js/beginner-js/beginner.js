@@ -143,7 +143,7 @@ sayThanks('Gloria Udoh');
 // Functions can be called before they are declared
 function createSpace(sectionNumber, sectionName) {
   (sectionNumber === 1) ? console.log('-------------------------------------------------------------------------') : console.log('\n\n-------------------------------------------------------------------------');
-  console.log(`Section #${sectionNumber}: $${sectionName}`);
+  console.log(`Section #${sectionNumber}: ${sectionName}`);
   console.log('-------------------------------------------------------------------------');
 }
 
@@ -448,7 +448,8 @@ const robotFactory = (model, mobile) => {
 const tinCan = robotFactory('P-500', true);
 tinCan.beep();
 
-// Using inbuilt Object methods
+// Using in-built Object methods
+// Object in-built function documentation: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object
 const machine = {
 	model: 'SAL-1000',
   mobile: true,

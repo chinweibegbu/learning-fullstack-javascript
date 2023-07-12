@@ -189,6 +189,8 @@ console.log(groceryList);
 const pastaIndex = groceryList.indexOf('pasta');
 console.log(pastaIndex);
 console.log(`There are ${groceryList.length} items in the grocery list.`);
+groceryList.splice(3, 3, 'apples');
+console.log(groceryList);
 
 // -------------------------------------------------------------------------
 // 8. LOOPS

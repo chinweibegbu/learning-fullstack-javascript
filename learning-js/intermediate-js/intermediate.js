@@ -31,6 +31,10 @@ class HospitalEmployee {
     }
 }
 
+/*
+    NOTE: When you use the extends keyword to declare a subclass, you automatically inherit the getters, setters, and methods.
+            However, you must call super() from within the constructor() to set a parent’s properties
+*/
 class Nurse extends HospitalEmployee {
     constructor(name, certifications) {
         // NOTE: super() MUST be used before setting any new properties

@@ -33,6 +33,7 @@ class HospitalEmployee {
 
 class Nurse extends HospitalEmployee {
     constructor(name, certifications) {
+        // NOTE: super() MUST be used before setting any new properties
         super(name);
         this._certifications = certifications;
     } 

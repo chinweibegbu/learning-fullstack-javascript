@@ -1,5 +1,5 @@
 # Course Notes
-### JavaScript Overview
+## JavaScript Overview
 Refer to the following files for the content covered in the overview section of this course: 
 - `[../learning-js/beginner-js/beginner.js]`
 - `[../learning-js/intermediate-js/intermediate.js]`

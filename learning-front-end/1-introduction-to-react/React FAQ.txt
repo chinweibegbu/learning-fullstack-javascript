@@ -1,0 +1,20 @@
+Q: Structuring a React project:
+A: https://scrimba.com/articles/react-project-structure/#:~:text=The%20structure%20is%20organized%20into,styles%20folder%20contains%20CSS%20styles.
+
+Q: Insert <img> into js file:
+A: https://stackoverflow.com/questions/34582405/react-wont-load-local-images
+
+Q: Insert simple border:
+A: https://stackoverflow.com/questions/2020496/how-to-set-a-border-for-an-html-div-tag
+
+Q: Uppercase text in CSS: 
+A: https://www.w3schools.com/cssref/pr_text_text-transform.php
+
+Q: Margin shorthand in CSS:
+A: https://www.w3schools.com/css/css_margin.asp
+
+Q: Font size guidelines:
+A: https://www.learnui.design/blog/mobile-desktop-website-font-size-guidelines.html
+
+Q: <ul> as grid using flex:
+A: https://codepen.io/katrina-isabelle/pen/qXxyrw

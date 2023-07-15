@@ -123,3 +123,19 @@ Commonly used commands:
 - `npm test`: Starts the test runner
 - `npm run eject`: Removes this tool and copies build dependencies, configuration files and scripts into the app directory <br>
     **NOTE**: The above command has no reverse
+
+### Setting up React Developer 
+1. Install the "React Developer Tools" Chrome extension
+    **NOTE**: The extension will be grey on web pages which do not use React and coloured on pages which do (red for sites in development and blue for sites in production)
+2. Create a react app
+3. Navigate into the created React app folder
+4. Open the application in Google Chrome to see the extension in use
+5. Open the Chrome Developer Tools - you will see that React has added two tabs:
+	- `Components`
+	- `Profile`
+6. Click on "Settings" tab and delete any filter
+7. Open a new terminal and open the code in Visual Studio Code
+8. Add a `props` parameter to the App function(al) component
+9. Add a `<p>` element which accesses the `name` propoerty of `props`
+10. Navigate back to Chrome Developer Tools
+11. Add a `name` property to the `props` tab of the `App` component - you should now see the newly added `props.name` on the website

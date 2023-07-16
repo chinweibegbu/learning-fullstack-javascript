@@ -139,3 +139,44 @@ Commonly used commands:
 9. Add a `<p>` element which accesses the `name` propoerty of `props`
 10. Navigate back to Chrome Developer Tools
 11. Add a `name` property to the `props` tab of the `App` component - you should now see the newly added `props.name` on the website
+
+## Questions and Answers
+Q: Structuring a React project:<br>
+A: https://scrimba.com/articles/react-project-structure/#:~:text=The%20structure%20is%20organized%20into,styles%20folder%20contains%20CSS%20styles
+
+Q: Insert `<img>` into js file:<br>
+A: https://stackoverflow.com/questions/34582405/react-wont-load-local-images
+
+Q: Insert simple border:<br>
+A: https://stackoverflow.com/questions/2020496/how-to-set-a-border-for-an-html-div-tag
+
+Q: Uppercase text in CSS:<br>
+A: https://www.w3schools.com/cssref/pr_text_text-transform.php
+
+Q: `margin` shorthand in CSS:<br>
+A: https://www.w3schools.com/css/css_margin.asp
+
+Q: Font size guidelines:<br>
+A: https://www.learnui.design/blog/mobile-desktop-website-font-size-guidelines.html
+
+Q: `<ul>` as grid using flex:<br>
+A: https://codepen.io/katrina-isabelle/pen/qXxyrw
+
+Q: Remove focus decoration from text `<input>`<br>
+A: https://stackoverflow.com/questions/3397113/how-to-remove-focus-border-outline-around-text-input-boxes-chrome
+
+Q: Placeholder for text `<input>` field<br>
+A: https://www.geeksforgeeks.org/placeholder-vs-value-attributes-in-html/#:~:text=Value%20Attribute-,The%20placeholder%20attribute%20specifies%20a%20short%20hint%20that%20describes%20the,be%20taken%20during%20form%20submission.
+
+Q: Include legend in `<fieldset>` display<br>
+A: https://codepen.io/vkjgr/pen/OJOydq
+
+Q: Fullscreen background banner<br>
+A: https://stackoverflow.com/questions/32468642/how-to-make-banner-fullscreen-and-adapt-to-the-browser-size
+
+Q: Cursor pointer in CSS<br>
+A: https://www.w3schools.com/cssref/tryit.php?filename=trycss_cursor
+
+Q: Change colour of radio button<br>
+A: https://www.geeksforgeeks.org/how-to-change-the-color-of-radio-buttons-using-css/
+

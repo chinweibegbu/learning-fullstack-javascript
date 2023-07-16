@@ -4,7 +4,7 @@ import '../styles/Business.css';
 function Business() {
     return (
         <div className='business'>
-            <img className='business-image' src={require('../restaurant.jpeg')} alt='Korean Food' />
+            <img className='business-image' src={require('../images/restaurant.jpeg')} alt='Korean Food' />
             <p className='business-name'>MarginOtto Pizzeria</p>
             <div className='business-text'>
                 <div className='business-address'>

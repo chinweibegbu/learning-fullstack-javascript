@@ -1,0 +1,60 @@
+form {
+    font-size: 13px;
+    padding: 60px 0 50px;
+    background: url("../images/restaurant-banner.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
+
+input[type=text] {
+    border: 0;
+    border-radius: 4px;
+    height: 30px;
+    width: 220px;
+    padding: 0 10px;
+}
+
+input[type=text]:focus {
+    outline: none;
+}
+
+input[type=submit] {
+    border: 0;
+    border-radius: 4px;
+    height: 30px;
+    width: 100px;
+    background-color: rgb(255, 69, 0, 0.8);
+    color: white;
+}
+
+input[type=submit]:hover {
+    cursor: pointer;
+}
+
+input[type=radio]:checked {
+    accent-color: orangered;
+}
+
+label {
+    color: white;
+}
+
+fieldset {
+    border: none;
+}
+
+fieldset.search-section > * {
+    margin: 0 5px
+}
+
+fieldset.sorting-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;   
+    margin-top: 5px; 
+}
+
+fieldset.sorting-section > legend {
+    float: left;
+    color: white;
+}
+

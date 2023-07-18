@@ -1,15 +1,14 @@
 import React from 'react';
 import Business from './Business';
 import '../styles/BusinessList.css';
+import { businessDetails } from '../businessDetails';
 
-function BusinessList() {
-    const businesses = []
-    for (let i=0; i<10; i++) {
-        businesses.push(<li key={"business-"+i}><Business /></li>);
-    }
+function BusinessList(props) {
     return (
         <ul className='business-view'>
-            {businesses}
+            {businessDetails.map((business, i) => {
+                return <li key={"business-"+i}><Business businessDetails={businessDetails[i]} /></li>;
+            })}        
         </ul>
     );
 }

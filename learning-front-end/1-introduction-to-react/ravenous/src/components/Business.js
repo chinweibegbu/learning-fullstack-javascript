@@ -1,20 +1,21 @@
 import React from 'react';
 import '../styles/Business.css';
 
-function Business() {
+function Business(props) {
+    const details = props.businessDetails;
     return (
         <div className='business'>
-            <img className='business-image' src={require('../images/restaurant.jpeg')} alt='Korean Food' />
-            <p className='business-name'>MarginOtto Pizzeria</p>
+            <img className='business-image' src={details.image} alt={details.name} />
+            <p className='business-name'>{details.name}</p>
             <div className='business-text'>
                 <div className='business-address'>
-                    <p>1010 Paddington Way</p>
-                    <p>Bordertown</p>
-                    <p>NY 10001</p>
+                    <p>{details.address.addressLine}</p>
+                    <p>{details.address.city}</p>
+                    <p>{details.address.state + ' ' + details.address.postalCode}</p>
                 </div>
                 <div className='business-details'>
-                    <p className='business-category'>Italian</p>
-                    <p className='business-rating'>4.5 stars</p>
+                    <p className='business-category'>{details.category}</p>
+                    <p className='business-rating'>{details.rating + ' stars'}</p>
                     <p>90 reviews</p>
                 </div>
             </div>

@@ -2,6 +2,7 @@
 import './App.css';
 import BusinessList from './components/BusinessList';
 import SearchBar from './components/SearchBar';
+import { businessDetails } from './businessDetails';
 
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
         <h2>ravenous</h2>
       </header>
       <SearchBar />
-      <BusinessList />
+      <BusinessList allBusinessDetails={businessDetails}/>
     </div>
   );
 }

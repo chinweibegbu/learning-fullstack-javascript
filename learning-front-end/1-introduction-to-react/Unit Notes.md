@@ -53,7 +53,7 @@ JSX is a syntax extension of JavaScript (looks a lot like HTML). JSX is NOT vali
     root.render(<ul>{peopleList}</ul>);
     ```
 - You can actually create React code without using JSX by utilising the `createElement(<element-type>, <properties>, <children>)` function as see in the code below:
-    > const greatestH1Ever = React.createElement("h1", null, "Best Heading Ever");
+    > `const greatestH1Ever = React.createElement("h1", null, "Best Heading Ever");`
 
     Read more about this particular function at https://react.dev/reference/react/createElement.
 
@@ -91,11 +91,11 @@ JSX is a syntax extension of JavaScript (looks a lot like HTML). JSX is NOT vali
     **NOTE**: `npm` is automatically downloaded with `node` but it updates more frequently so it is a good idea to install the latest version before starting work
 
 3. Uninstall and reisntall `create-react-app` if already installed by running the following code in your terminal/CMD. If you have never installed `create-react-app` before, skip this step:
-    > npm uninstall -g create-react-app <br>
-    > npm install -g create-react-app
+    > `npm uninstall -g create-react-app` <br>
+    > `npm install -g create-react-app`
 4. Create a new Reat project folder by running the following code in your terminal/CMD:
-    > npx create-react-app myfirstreactapp
-    >> OR &nbsp; npx create-react-app myfirstreactapp --use-npm
+    > `npx create-react-app myfirstreactapp`
+    >> OR &nbsp; `npx create-react-app myfirstreactapp --use-npm`
 
     **NOTE**: The name of your React application should NOT contain capital letters <br>
     **NOTE**: The alternative to using `npm` to create the React application is to use `yarn`, which is another package manager (read more here: https://yarnpkg.com/); to do so, simply remove `--use-npm` from the end of the code above

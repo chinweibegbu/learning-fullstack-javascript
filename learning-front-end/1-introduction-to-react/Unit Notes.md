@@ -180,3 +180,8 @@ A: https://www.w3schools.com/cssref/tryit.php?filename=trycss_cursor
 Q: Change colour of radio button<br>
 A: https://www.geeksforgeeks.org/how-to-change-the-color-of-radio-buttons-using-css/
 
+Q: Rendering components from raw JS data<br>
+A: https://stackabuse.com/bytes/fix-objects-are-not-valid-as-a-react-child-error-in-react/
+
+Q: Specify how image is to fit to container<br>
+A: https://www.w3schools.com/css/css3_object-fit.asp

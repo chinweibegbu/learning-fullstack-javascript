@@ -1,7 +1,7 @@
 # Unit Notes
 
 ## Directory Content
-### State Hooks Folder
+### hooks/state-hook Folder
 The files are itemised in the order in which their content was learnt:
 1. `ColorPicker.js`: An example of using `useState()` to change the state of an application dynamically
 2. `PhoneNumber.js`: An example of separating concerns regarding event handling and the returned JSX
@@ -19,7 +19,7 @@ The files are itemised in the order in which their content was learnt:
 4. `EditProfile.js`: An example of using objects with `setState()` showing that the current value is not restricted to a single value (can be an array, object, etc.)
 5. `Musical.js`: An example of simplifying code by using different state variables rather than passing a complex object to `useState()`
 
-### Effect Hooks Folder
+### hooks/effect-hook Folder
 The files are itemised in the order in which their content was learnt:
 1. `Counter.js`: An example of using `useEffect()` to carry out an action when a component is rendered or re-rendered (e.g. after using `setState()`)
 2. `Cleanup.js`: An example of how to cleanup after your effects such that each render or re-render does not add unnecessary changes

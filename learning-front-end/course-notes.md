@@ -80,3 +80,49 @@ The `babel-preset-env` preset also allows us to provide a list of browsers we wa
 
 To list all browsers supported by your .browserlist file using the following command:
 > `npx browserslist`
+
+## Useful JS for React
+### Spread Syntax
+Syntax for function parameters:
+> myFunction(a, ...iterableObj, b) e.g. <br>
+> `> function addNumbers(initial, ...numbers, divider) {...}`
+
+Syntax for arrays:
+> [1, ...iterableObj, '4', 'five', 6] e.g. <br>
+> `> const newItems = [items, ...oldItems];` 
+
+Syntax for objects:
+> { ...obj, key: 'value' }
+> `> const newObject = { ...oldObject, numItems:100 }`
+
+You can read more here: [https://developer.mozilla.org/JavaScript/Spread_syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
+
+### Computed Property Name
+This allows you to refer to a variable to used as a property name. See the code below for an example:
+```
+const myPropertyName = 'c';
+
+const myObject = {
+  a: 5,
+  b: 10,
+  [myPropertyName]: 15
+};
+
+console.log(myObject.c); // prints 15
+```
+
+### `setInterval()` Function
+The `setInterval()` method, offered on the Window and Worker interfaces, repeatedly calls a function or executes a code snippet, with a fixed time delay between each call. The syntax to use this code is as follows:
+> setInterval(code) <br>
+> setInterval(code, delay) <br>
+> 
+> setInterval(func) <br>
+> setInterval(func, delay) <br>
+> setInterval(func, delay, arg0) <br>
+> setInterval(func, delay, arg0, arg1) <br>
+> setInterval(func, delay, arg0, arg1, /* … ,*/ argN) <br>
+
+
+Read more about this function at this link: https://developer.mozilla.org/en-US/docs/Web/API/setInterval
+
+Difference beteween `setTimeout()` and `setInterval()`: https://javascript.info/settimeout-setinterval#:~:text=That's%20called%20%E2%80%9Cscheduling%20a%20call,repeating%20continuously%20at%20that%20interval.

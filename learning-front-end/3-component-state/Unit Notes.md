@@ -61,3 +61,37 @@ The *Effect Hook* tells our component to do something every time it’s rendered
   3. When the component is removed, or unmounted, from the DOM
 - If our effect returns a function, then the `useEffect()` Hook always treats that as the cleanup function.
 - By passing a second argument to the `useEffects()` function called the *dependency array*, you can specify when the `useEffects()` function should be called e.g. only on initial render
+
+## React Programming Concepts
+*"If a component has to have state, make calculations based on props, or manage any other complex logic, then that component shouldn’t also have to render JSX"*
+
+Divide your project into:
+  1. Stateful (container) components: Manage complex state and logic
+  2. Stateless (presentational) components: Render JSX
+
+<img src="../course-images/React%20App%20Structure%20(Before%20Splitting).png" width="50%"><img src="../course-images/React%20App%20Structure%20(After%20Splitting).png"  width="50%">
+
+-  A presentational component should be an exported component and should not render itself
+-  A presentational component will always get rendered by a container component.
+-  Components should never directly update their props - rather the parent (container component) needs to give the child (presentational component) a way to communicate change. This is usually done in the form of a function. See the code below for an example of how this can be done.                             
+ 
+```
+function Container() {
+  const [isActive, setIsActive] = useState(false); 
+  return (
+    <>
+      <Presentational active={isActive} toggle={setIsActive}/>
+    </>
+  );                            
+}
+ 
+function Presentational(props) {
+  const clickHandler = () => {
+    props.toggle(!props.active)
+  }
+  return (
+    <h1>Engines are {props.active}</h1>
+    <button onClick={clickHandler}>Engine Toggle</button>
+  );
+}
+```

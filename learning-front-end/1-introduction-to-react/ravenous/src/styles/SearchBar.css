@@ -11,10 +11,12 @@ input[type=text] {
     height: 30px;
     width: 220px;
     padding: 0 10px;
+    /* background-color: rgb(255, 255, 255, 0.8); */
 }
 
 input[type=text]:focus {
     outline: none;
+    /* background-color: rgb(255, 255, 255); */
 }
 
 input[type=submit] {
@@ -28,6 +30,7 @@ input[type=submit] {
 
 input[type=submit]:hover {
     cursor: pointer;
+    background-color: rgb(255, 69, 0);
 }
 
 input[type=radio]:checked {
@@ -43,7 +46,7 @@ fieldset {
 }
 
 fieldset.search-section > * {
-    margin: 0 5px
+    margin: 2px 5px
 }
 
 fieldset.sorting-section {

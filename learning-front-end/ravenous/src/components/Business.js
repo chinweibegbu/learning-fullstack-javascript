@@ -3,6 +3,7 @@ import '../styles/Business.css';
 
 function Business(props) {
     const details = props.businessDetails;
+    console.log(details);
     return (
         <div className='business'>
             <img className='business-image' src={details.image} alt={details.name} />
@@ -14,9 +15,9 @@ function Business(props) {
                     <p>{details.address.state + ' ' + details.address.postalCode}</p>
                 </div>
                 <div className='business-details'>
-                    <p className='business-category'>{details.category}</p>
+                    <p className='business-category'>{details.category.title}</p>
                     <p className='business-rating'>{details.rating + ' stars'}</p>
-                    <p>90 reviews</p>
+                    <p>{details.reviewCount} {details.reviewCount === 1 ? "review" : "reviews"}</p>
                 </div>
             </div>
         </div>

@@ -1,0 +1,8 @@
+.main {
+    color: rgb(77, 77, 77);
+    font-style: italic;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

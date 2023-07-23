@@ -13,16 +13,16 @@ The aim of this project is to build and deploy a restaurant recommendation appli
 5. Git and GitHub
 
 ## Features
-- The website allows users to scroll up and down to navigate through its content.
-- A list of mock restaurant data is presented to the user.
-- Information is transferred efficiently between components using a unidirectional data flow pattern commonly used in React applications.
-- Users can simulate a search query by typing and submitting it in the search bar.
+- Users can query for a restaurant based on their location, and sort it by best match, highest rated, and most reviewed.
+- Users can view a list of businesses that match their query, sorted by best match, highest rated, or most reviews.
+- Users can repeatedly make multiple queries for a restaurant recommendation.
 
 ## Future work
 - [x] Create the base application components
 - [x] Style the application
 - [x] Utilise component information transfer techniques using `props`
-- [ ] Integrate the Yelp API
+- [x] Integrate the Yelp API
+- [ ] Add application tests
 - [ ] Deploy the application
 
 

@@ -1,7 +1,7 @@
 # Unit Notes
 
 ## Unit Testing
-### TEsting using Mocha and Chai
+### Testing using Mocha and Chai
 * Common frameworks for unit testing in JS are:
   * [Mocha](https://mochajs.org/)
   * [Chai](https://www.chaijs.com/)
@@ -107,3 +107,11 @@ Backend web architecture is made up of:
 
 ### Web API
 *"An API is a collection of clearly defined methods of communication between different software components."*
+
+## CRUD Architecture
+| REST Endpoint    | Status Codes                               | Response Content
+| ---------------- | ------------------------------------------ | ---------------------------------------------------------------------------------------------- 
+| POST             | 201 (CREATED)                              | Header with link to newly-created resource <br> + Body with newly-created resource
+| GET              | 200 (OK)                                   | Body with fetched resource(s)  
+| PUT              | 200 (OK) <br> **OR** 204 (NO CONTENT)      | Body with updated resource <br> **OR** *N/A*
+| DELETE           | 204 (NO CONTENT)                           | *N/A*

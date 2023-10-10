@@ -106,7 +106,7 @@ DRY: Don't Repeat Yourself → This can be achieved with:
      * e.g.
        * app.use(bodyParser.json());
   3. Error Handling (in-built)
-     * Error handling middleware needs to be the last `app.use()` in your file.
+     * Error handling middleware needs to be the last `app.use()` in your file. <br>
         **NOTE**: The positioning of this function is extremely important because remember that middleware is parsed in the order in which it is defined in the code. 
      * Express has an inbuilt error handler
      * Invoke the error-handling middleware by:
@@ -119,3 +119,32 @@ DRY: Don't Repeat Yourself → This can be achieved with:
 **NOTE**: You can see other Express Middleware Modules in its [documentation](https://expressjs.com/en/resources/middleware.html).
 
 ### Router Parameters
+When working with routes that require parameters, we might find ourselves in a position where multiple different routes require the same parameter and use it to identify the same piece of data.
+
+**SOLUTION**: `app.param()`
+
+<img src="../../course-images/app.param()%20function.png">
+
+* This function takes in two parameters:
+  1. A query parameter name
+  2. A callback function which will be used by all router functions matching the specified query parameter.
+* The callback function takes three parameters:
+  1. `req`
+  2. `res`
+  3. `next`
+  4. Query parameter value holder
+* Query parameters can be merged into more complex structures using Express Routers as seen in the image below:
+  <img src="../../course-images/Router%20Parameter%20Merging.png">
+  * In the code above we define two endpoints:
+    1. `/sorcerer`
+    2. `/sorcerer/:sorcererId/familiars`
+  * The familiars are nested into the `sorcerer` endpoint
+    <br>
+    **MEANING**: Indicates a relationship that a sorcerer has multiple familiars
+  * `{mergeParams: true}` argument: Tells Express that the `familiarRouter` should have access to parameters passed into its parent router, that is, the `sorcererRouter`
+  * We then tell Express that the path for the `familiarRouter` is the same as the path for the `sorcererRouter` with the additional path `/:sorcererId/familiars`
+  * We then can create a family of routes (a router) built by appending routes to `familiarRouter`‘s base: `/sorcerer/:sorcererId/familiars`
+
+
+
+

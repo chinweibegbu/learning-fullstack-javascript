@@ -145,6 +145,59 @@ When working with routes that require parameters, we might find ourselves in a p
   * We then tell Express that the path for the `familiarRouter` is the same as the path for the `sorcererRouter` with the additional path `/:sorcererId/familiars`
   * We then can create a family of routes (a router) built by appending routes to `familiarRouter`‘s base: `/sorcerer/:sorcererId/familiars`
 
+## Express + CORS
+**AIM**: Facilitate safe resource requests from other servers.
 
+### Security Policies
+Security policies on servers mitigate the risks associated with requesting assets hosted on different server.
 
+* `same-origin`
+  * Very restrictive
+  * A document hosted on Server A can only interact with other documents that are also on Server A
+  * A document can only interact with other documents of the same origin
+  * An origin is made up of the following three parts:
+    1. the protocol
+    2. the host
+    3. the port number
+  * e.g. http://www.example.com/foo-bar.html
+    * Protocol: HTTP
+    * Host: www.example.com
+    * Port: 80 (assuming use of the default HTTP port)
+* `cross-origin`
+  * Not as restrictive as `same-origin`
+  * Has evolved into the **Cross-Origin Resource Sharing** standard a.k.a. **CORS**
 
+### About CORS
+* CORS manages `cross-origin` requests
+* CORS allows servers to specify **who** (i.e., which origins) can and **how** one can access the assets on the server, among many other things
+
+CORS manages cross-origin requests by adding new HTTP headers to the standard list of headers. The new HTTP headers added by CORS are as follows:
+* `Access-Control-Allow-Origin`
+  * Allows servers to specify how resources are shared with external domains
+  * Sample header calues include:
+    * `*` → The server will share requested resources with any domain on the internet
+    * A partuclar domain
+    * A list of domains
+* `Access-Control-Allow-Credentials`
+* `Access-Control-Allow-Headers`
+* `Access-Control-Allow-Methods`
+* `Access-Control-Expose-Headers`
+* `Access-Control-Max-Age`
+* `Access-Control-Request-Headers`
+* `Access-Control-Request-Method`
+* `Origin`
+
+Read more about CORS headers here: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers#CORS
+
+**Preflight Requests** are sent before the original request using the `OPTIONS` header to allow the target server first check whether the request is safe.
+<img src="../../course-images/CORS%20Preflight%20Request.png">
+
+CORS Implementation Steps:
+* If you are using Node:
+  1. Use the `setHeader()` function
+    <img src="../../course-images/Node%20CORS%20Implementation.png">
+* If you are using Express:
+  1. Use NPM to install `cors`
+  2. Import `cors` with the `require()` function
+  3. Use the `app.use()` function to add the `cors` middleware
+   <img src="../../course-images/Express%20CORS%20Implementation.png">

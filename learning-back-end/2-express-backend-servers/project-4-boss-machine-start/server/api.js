@@ -173,4 +173,20 @@ apiRouter.delete('/ideas/:ideaId', (req, res, next) => {
     }
 });
 
+// MEETING ENDPOINTS
+apiRouter.get('/meetings', (req, res, next) => {
+    const ideas = service.getAllFromDatabase('meetings');
+    res.send(ideas);
+});
+
+apiRouter.post('/meetings', (req, res, next) => {
+    const createdMeeting = service.createMeeting();
+    res.status(201).send(createdMeeting);
+});
+
+apiRouter.delete('/meetings', (req, res, next) => {
+    const result = service.deleteAllFromDatabase('meetings');
+    res.status(204).send(result);
+});
+
 module.exports = apiRouter;

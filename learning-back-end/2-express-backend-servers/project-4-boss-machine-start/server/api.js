@@ -35,6 +35,9 @@ const IdeaIdChecker = (req, res, next, id) => {
 };
 apiRouter.param('ideaId', IdeaIdChecker);
 
+// Load checkMillionDollarIdea middleware
+const checkMillionDollarIdea = require('./checkMillionDollarIdea');
+
 // MINION ENDPOINTS
 apiRouter.get('/minions', (req, res, next) => {
     const minions = service.getAllFromDatabase('minions');
@@ -112,7 +115,7 @@ apiRouter.get('/ideas/:ideaId', (req, res, next) => {
     res.send(idea);
 });
 
-apiRouter.post('/ideas', (req, res, next) => {
+apiRouter.post('/ideas', checkMillionDollarIdea, (req, res, next) => {
     const ideaDetails = req.body;
 
     if ('numWeeks' in ideaDetails && Number(ideaDetails.numWeeks) < 0) {
@@ -130,7 +133,7 @@ apiRouter.post('/ideas', (req, res, next) => {
     }
 });
 
-apiRouter.put('/ideas/:ideaId', (req, res, next) => {
+apiRouter.put('/ideas/:ideaId', checkMillionDollarIdea, (req, res, next) => {
     let updatedIdeaDetails = req.body;
 
     if ('numWeeks' in updatedIdeaDetails && Number(updatedIdeaDetails.numWeeks) < 0) {

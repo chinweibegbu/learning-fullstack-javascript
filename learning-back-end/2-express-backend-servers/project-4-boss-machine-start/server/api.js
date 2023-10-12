@@ -72,11 +72,14 @@ apiRouter.put('/minions/:minionId', (req, res, next) => {
         // Add ID to details
         updatedMinionDetails["id"] = req.minionId;
 
-        // If the body does not includes salary, add the original minion's salary
+        // Ensure all properties are complete before using the DB method
         const originalMinionDetails = service.getFromDatabaseById('minions', req.minionId);
-        if (!updatedMinionDetails.salary) {
-            updatedMinionDetails["salary"] = originalMinionDetails.salary;
-        }
+        const minionPropertyNames = ["name", "title", "weaknesses", "salary"];
+        minionPropertyNames.forEach((propertyName) => {
+            if (!updatedMinionDetails[propertyName]) {
+                updatedMinionDetails[propertyName] = originalMinionDetails[propertyName];
+            }
+        });
 
         // Update minion
         const updatedMinion = service.updateInstanceInDatabase('minions', updatedMinionDetails);

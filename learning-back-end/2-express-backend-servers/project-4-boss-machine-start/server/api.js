@@ -5,7 +5,7 @@ const apiRouter = express.Router();
 const service = require('./db');
 
 // Add ID checker middleware
-const idChecker = (req, res, next, id) => {
+const minionIdChecker = (req, res, next, id) => {
     const minions = service.getAllFromDatabase('minions');
 
     const foundIndex = minions.findIndex((minion) => {
@@ -18,8 +18,9 @@ const idChecker = (req, res, next, id) => {
         res.status(404).send('Minion not found!');
     }
 };
-apiRouter.param('minionId', idChecker);
+apiRouter.param('minionId', minionIdChecker);
 
+// MINION ENDPOINTS
 apiRouter.get('/minions', (req, res, next) => {
     const minions = service.getAllFromDatabase('minions');
     res.send(minions);
@@ -46,25 +47,27 @@ apiRouter.post('/minions', (req, res, next) => {
 });
 
 apiRouter.put('/minions/:minionId', (req, res, next) => {
-    const updatedMinionDetails = req.body;
+    let updatedMinionDetails = req.body;
 
     if ('salary' in updatedMinionDetails && Number(updatedMinionDetails.salary) < 0) {
         res.status(400).send("Salary cannot be negative");
     }
 
     try {
-        const currentMinion = service.getFromDatabaseById('minions', req.minionId);
+        // Add ID to details
+        updatedMinionDetails["id"] = req.minionId;
+        
+        // If the body does not includes salary, add the original minion's salary
+        const originalMinionDetails = service.getFromDatabaseById('minions', req.minionId);
+        if (!updatedMinionDetails.salary) {
+            updatedMinionDetails["salary"] = originalMinionDetails.salary;
+        }
+        
+        // Update minion
+        const updatedMinion = service.updateInstanceInDatabase('minions', updatedMinionDetails);
 
-        const updatedMinionDetailsWithId = Object.assign(
-            {
-                "id": req.minionId,
-                "salary": currentMinion.salary
-            },
-            updatedMinionDetails
-        );
-        const updatedMinion = service.updateInstanceInDatabase('minions', updatedMinionDetailsWithId);
-
-        res.status(200).send(updatedMinion);
+        // Send updated minion with a 200 OK status
+        res.send(updatedMinion);
     } catch (e) {
         res.status(400).send(e.message);
     }

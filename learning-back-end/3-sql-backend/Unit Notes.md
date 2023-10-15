@@ -1,7 +1,7 @@
 # Unit Notes
 
 ## SQL Basics
-See SQL code for this section at `./basics.sql`
+See SQL code for this section at `./sample-sql-code/basics.sql`
 
 **SQL**: Structured Query Language <br>
 
@@ -18,7 +18,7 @@ See SQL code for this section at `./basics.sql`
   * Read more about SQL constraints on [w3schools](https://www.w3schools.com/sql/sql_constraints.asp)
 
 ## SQL Queries
-See SQL code for this section at `./queries.sql`
+See SQL code for this section at `./sample-sql-code/queries.sql`
 
 **NOTE**:
 * Operators used with `WHERE` include:
@@ -50,7 +50,7 @@ See SQL code for this section at `./queries.sql`
 Read more about SQL wildcards on [w3schools](https://www.w3schools.com/sql/sql_wildcards.asp)
 
 ## SQL Calculations
-See SQL code for this section at `./calculations.sql`
+See SQL code for this section at `./sample-sql-code/calculations.sql`
 
 **Aggregrates**: Calculations performed on multiple rows of a table
 
@@ -69,6 +69,8 @@ Common aggregate functions include:
   * You can't use `WHERE` in this case because it filters the rows, NOT the groups
 
 ## Working with Multiple SQL Tables
+See SQL code for this section at `./sample-sql-code/multiple-tables.sql`
+
 ### Joining Tables
 <img src="../course-images/SQL%20Joins.png">
 
@@ -91,7 +93,7 @@ Common aggregate functions include:
 * We can then go on to do whatever we want with this temporary table (such as join the temporary table with another table)
 
 ## Setting up SQLite
-### Inreoduction to SQLite
+### Introduction to SQLite
 * SQLite is a database engine
 * In SQLite, a database is stored in a single file
 * Drawbacks of SQLite:

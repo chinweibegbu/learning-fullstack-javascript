@@ -43,7 +43,7 @@ A **module** is a collection of code located in a file. Modules are created usin
 <img src="../../course-images/Node%20Module%20require()-ing.png">
 
 Node modules are divided into three categories: 
-* core modules: Defined within Node’s source and are located in the `/lib` folder. Required with a name e.g. `require(event)`
+* core modules: Defined within Node’s source and are located in the `/lib` folder. Required with a name e.g. `require('event')`
 * local modules: Defined by the programmer. Required with a path e.g. `require('./dog.js')`
 * third-party modules: These can be installed with Node Package Manager, an online collection of software. Downloaded using `npm install package-name` in the console. Examples include `react`, `express` and `nodemon`
 

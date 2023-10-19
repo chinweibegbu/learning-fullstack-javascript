@@ -7,8 +7,8 @@ const db = new sqlite3.Database(process.env.TEST_DATABASE || './database.sqlite'
 const timesheetsRouter = require('./timesheets');
 employeesRouter.use('/timesheets', timesheetsRouter);
 
-employeesRouter.param('id', (req, res, next, id) => {
-    const employeeId = Number(req.params.id);
+employeesRouter.param('employeeId', (req, res, next, id) => {
+    const employeeId = Number(id);
     db.get(
         'SELECT * FROM Employee WHERE id=$id',
         { $id: employeeId },
@@ -38,7 +38,7 @@ employeesRouter.get('/', (req, res, next) => {
     );
 });
 
-employeesRouter.get('/:id', (req, res, next) => {
+employeesRouter.get('/:employeeId', (req, res, next) => {
     db.get(
         'SELECT * FROM Employee WHERE id=$id',
         { $id: req.employeeId },
@@ -84,7 +84,7 @@ employeesRouter.post('/', (req, res, next) => {
     }
 });
 
-employeesRouter.put('/:id', (req, res, next) => {
+employeesRouter.put('/:employeeId', (req, res, next) => {
     const employee = req.body.employee;
     const employeeId = req.employeeId;
 
@@ -120,7 +120,7 @@ employeesRouter.put('/:id', (req, res, next) => {
     }
 });
 
-employeesRouter.delete('/:id', (req, res, next) => {
+employeesRouter.delete('/:employeeId', (req, res, next) => {
     const employeeId = req.employeeId;
 
     // Get employee to delete

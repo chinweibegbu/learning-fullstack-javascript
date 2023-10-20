@@ -24,7 +24,6 @@ menuItemsRouter.param('menuItemId', (req, res, next, id) => {
 });
 
 menuItemsRouter.get('/', (req, res, next) => {
-    console.log(req.params.menuId);
     db.all(
         'SELECT * FROM MenuItem WHERE menu_id=$menuId',
         { $menuId: req.params.menuId },

@@ -2,8 +2,10 @@ const sqlite3 = require('sqlite3');
 const db = new sqlite3.Database(process.env.TEST_DATABASE || './database.sqlite');
 
 db.serialize(() => {
+    // Drop and recreate Employee table
+    db.run(`DROP TABLE IF EXISTS Employee`);
     db.run(
-        `CREATE TABLE IF NOT EXISTS Employee (
+        `CREATE TABLE Employee (
             id INTEGER NOT NULL,
             name TEXT NOT NULL,
             position TEXT NOT NULL,
@@ -12,8 +14,11 @@ db.serialize(() => {
             PRIMARY KEY(id)
         )`
     );
+
+    // Drop and recreate Timesheet table
+    db.run(`DROP TABLE IF EXISTS Timesheet`);
     db.run(
-        `CREATE TABLE IF NOT EXISTS Timesheet (
+        `CREATE TABLE Timesheet (
             id INTEGER NOT NULL,
             hours INTEGER NOT NULL,
             rate INTEGER NOT NULL,
@@ -23,15 +28,21 @@ db.serialize(() => {
             FOREIGN KEY (employee_id) REFERENCES Employee(id)
         )`
     );
+
+    // Drop and recreate Menu table
+    db.run(`DROP TABLE IF EXISTS Menu`);
     db.run(
-        `CREATE TABLE IF NOT EXISTS Menu (
+        `CREATE TABLE Menu (
             id INTEGER NOT NULL,
             title TEXT NOT NULL,
             PRIMARY KEY(id)
         )`
     );
+
+    // Drop and recreate MenuItem table
+    db.run(`DROP TABLE IF EXISTS MenuItem`);
     db.run(
-        `CREATE TABLE IF NOT EXISTS MenuItem (
+        `CREATE TABLE MenuItem (
             id INTEGER NOT NULL,
             name TEXT NOT NULL,
             description TEXT,

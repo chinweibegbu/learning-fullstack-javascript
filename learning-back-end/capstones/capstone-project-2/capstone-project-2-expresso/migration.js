@@ -39,7 +39,7 @@ db.serialize(() => {
             price INTEGER NOT NULL,
             menu_id INTEGER NOT NULL,
             PRIMARY KEY(id),
-            FOREIGN KEY (menu_id) REFERENCES Employee(id)
+            FOREIGN KEY (menu_id) REFERENCES Menu(id)
         )`
     );
 });

@@ -118,14 +118,14 @@ menusRouter.delete('/:menuId', (req, res, next) => {
     const menuId = req.menuId;
 
     // Check that Menu does not have related MenuItems
-    db.all(
+    db.get(
         `SELECT * FROM MenuItem WHERE menu_id=${menuId}`,
-        (error, rows) => {
+        (error, row) => {
             if (error) {
                 next(error);
             }
-            if (rows) {
-                res.status(404).send('Menu has related menu items');
+            if (row) {
+                res.status(400).send('Menu has one or more related menu items');
             } else {
                 // Delete menu
                 db.run(

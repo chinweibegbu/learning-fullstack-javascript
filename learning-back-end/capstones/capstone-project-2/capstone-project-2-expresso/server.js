@@ -24,6 +24,9 @@ app.use(morgan('tiny'));        // Logger
 const employeesRouter = require('./api/employees');
 app.use('/api/employees', employeesRouter);
 
+const menusRouter = require('./api/menus');
+app.use('/api/menus', menusRouter);
+
 // Set up app on the defined port
 app.listen(PORT, () => {
     console.log(`Server running on ${PORT}`);
